@@ -1,0 +1,9 @@
+<%= link_to 'New Question', new_question_path, class: "btn btn-outline-secondary float-right" %>
+
+<h1>Quiz Questions</h1>
+
+<div id="questions" class="list-group" data-url="<%= sort_questions_path %>">
+  <% @questions.each do |question| %>
+    <%= link_to question.name, question, class: "list-group-item", id: dom_id(question) %>
+  <% end %>
+</div>
